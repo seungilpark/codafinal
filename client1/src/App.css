@@ -1,0 +1,667 @@
+
+
+/* main */
+
+.App {
+  background: url('./matrix.png') no-repeat fixed center; 
+
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  filter: opacity(0.88)
+}
+
+
+
+/* Menu tabs */
+.menu {
+  height: 5%;
+  background-color: #131121;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  color: #ABCDAB;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 1.3rem;
+}
+
+he
+
+.stress {
+  font-weight: 700;
+  color: deeppink;
+}
+
+
+.foldedManual {
+  /* hidden */
+  display:none;
+}
+.visibleManual {
+  position: absolute;
+  top:5%;
+  left:0;
+  right:0;
+  height:95vh;
+  margin: auto;
+  text-align: auto;
+  font-size: 1.5rem;
+  background-color: white;
+  z-index: 100;
+  color: black;
+}
+
+
+
+
+/* computerDeck */
+.computerDeck {
+  height:calc(95%/4);
+  
+}
+
+.computerDeckContainer {
+  height:calc(95%/4);
+  /* height:100%;
+  width:100%; */
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+.selectedWhiteComputerCard {
+  height:66%;
+  width:7%;
+  background:#FFF;
+  opacity: 1;
+  display: inline-block;
+  text-align: center;
+  font-size: 3.5rem;;
+  text-align:center;
+  border: 8px dotted red;
+  margin:5px;  
+  vertical-align: middle;
+
+}
+
+.visibleWhiteComputerCard {
+  height:66%;
+  width:7%;
+  background:#FFF;
+  opacity: 1;
+  display: inline-block;
+  text-align: center;
+  font-size: 3.5rem;;
+  text-align:center;
+  border: 5px dashed #20c2ff;
+  margin:5px;  
+  vertical-align: middle;
+
+}
+
+.selectedBlackComputerCard {
+  height:66%;
+  width:7%;
+  background:#000;
+  opacity: 1;
+  display: inline-block;
+  text-align: center;
+  font-size: 3.5rem;
+  color: white;
+  text-align:center;
+  vertical-align: middle; 
+  border: 8px  dotted red;
+  margin:5px;
+  
+}
+
+.visibleBlackComputerCard {
+  height:66%;
+  width:7%;
+  background:#000;
+  opacity: 1;
+  display: inline-block;
+  text-align: center;
+  font-size: 3.5rem;
+  color: white;
+  text-align:center;
+  vertical-align: middle; 
+  border: 5px dashed #20c2ff;
+  margin:5px;
+  
+}
+
+
+.whiteComputerCard {
+  height:66%;
+  width:7%;
+  background:#FFF;
+  opacity: 1;
+  display: inline-block;
+  text-align: center;
+  font-size: 3.5rem;;
+  text-align:center;
+  border: 5px solid #AAA;
+  margin:5px;  
+  vertical-align: middle;
+  /* box-shadow: 0 4px 8px 0 rgba(255, 255,255, 0.5), 0 6px 20px 0 rgba(255, 255, 255, 0.5); */
+}
+
+.blackComputerCard {
+  height:66%;
+  width:7%;
+  background:#000;
+  opacity: 1;
+  display: inline-block;
+  text-align: center;
+  font-size: 3.5rem;
+  color: white;
+  text-align:center;
+  vertical-align: middle; 
+  border: 5px  solid #AAA;
+  margin:5px;
+  
+  /* box-shadow: 0 8px 20px 0 rgba(255, 255,255, 0.5), 0 6px 20px 0 rgba(255, 255, 255, 0.5); */
+}
+
+/* pool */
+
+.status {
+  height:calc(95%/2);
+  
+}
+
+
+/* gameStatusStart */
+.gameStatusStart {
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height:calc(95%/2.5);
+  width:30%;
+  padding-bottom: 2%;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-auto-rows: 1fr;
+  background-color: #131121;
+  border-radius: 35px;
+  grid-template-areas:
+    ". msg1 msg1 msg1 msg1 msg1 msg1 ."
+    ". msg2 msg2 msg2 msg2 msg2 msg2 ."
+    ". msg2 msg2 msg2 msg2 msg2 msg2 ."
+    ". . . . . . . ."
+    ". . . .  . . . ."
+    ". . . .  . . . ."
+    ". . . . . . . ."
+    ". . btn btn btn btn . ."
+    ". . . . . . . .";
+  box-shadow: 0 4px 8px 0 #ABCDAB, 0 6px 20px 0 #ABCDAB;
+
+}
+.msg1 {
+  grid-area: msg1;
+  font-size: 1.3rem;
+  text-align: center;
+  color: #ABCDAB;
+}
+.msg2 {
+  grid-area: msg2;
+  font-size: 1.3rem;
+  text-align: center;
+  color: #ABCDAB;
+}
+
+.start-btn {
+  grid-area: btn;
+  background-color: #222;
+  border:2px solid #222; 
+  color:#ABCDAB;
+  font-size: 1.4rem;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 #ABCDAB, 0 6px 20px 0 #ABCDAB;
+}
+
+.start-btn:hover {
+  grid-area: btn;
+  background-color: #ABCDAB;
+  border:2px solid #ABCDAB; 
+  color:#222;
+  font-size: 1.4rem;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 #ABCDAB, 0 6px 20px 0 #ABCDAB;
+}
+
+
+/* computer's Turn */
+.gameStatusComputerTurn {
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height:calc(95%/2.5);
+  width:30%;
+  padding-bottom: 2%;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-auto-rows: 1fr;
+  background-color: #131121;
+  border-radius: 35px;
+  grid-template-areas:
+    ". msg1 msg1 msg1 msg1 msg1 msg1 ."
+    ". msg2 msg2 msg2 msg2 msg2 msg2 ."
+    ". msg2 msg2 msg2 msg2 msg2 msg2 ."
+    ". b b . . w w ."
+    ". b b nb  . w w nw"
+    ". b b nb  . w w nw"
+    ". . . . . . . ."
+    ". . ctn ctn ctn ctn . ."
+    ". . . . . . . .";
+  box-shadow: 0 4px 8px 0 #ABCDAB, 0 6px 20px 0 #ABCDAB;
+
+}
+
+.white {
+  background:#FFF;
+  text-align: center;
+  font-size: 2.2rem;
+  border: 2px solid #ABCDAB;
+  grid-area: w;
+  box-shadow: 0 4px 8px 0 #ABCDAB, 0 6px 20px 0 #ABCDAB;
+}
+
+.white1 {
+  background:#FFF;
+  text-align: center;
+  font-size: 2.2rem;
+  border: 2px solid #ABCDAB;
+  grid-area: w;
+  box-shadow: 0 4px 8px 0 #ABCDAB, 0 6px 20px 0 #ABCDAB;
+}
+
+.white1:hover {
+  background:#FFF;
+  text-align: center;
+  font-size: 2.2rem;
+  border: 8px dotted #ABCDAB;
+  grid-area: w;
+  box-shadow: 0 4px 8px 0 #ABCDAB, 0 6px 20px 0 #ABCDAB;
+}
+
+.black {
+  background:#222;
+  text-align: center;
+  font-size: 2.2rem;
+  border: 2px solid #ABCDAB;
+  grid-area: b;
+  color:#FFF;
+  box-shadow: 0 4px 8px 0 #ABCDAB, 0 6px 20px 0 #ABCDAB;
+}
+.black1 {
+  background:#222;
+  text-align: center;
+  font-size: 2.2rem;
+  border: 2px solid #ABCDAB;
+  grid-area: b;
+  color:#FFF;
+  box-shadow: 0 4px 8px 0 #ABCDAB, 0 6px 20px 0 #ABCDAB;
+}
+.black1:hover {
+  background:#222;
+  text-align: center;
+  font-size: 2.2rem;
+  border: 8px dotted #ABCDAB;
+  grid-area: b;
+  color:#FFF;
+  box-shadow: 0 4px 8px 0 #ABCDAB, 0 6px 20px 0 #ABCDAB;
+}
+
+
+.numOfBlacks {
+  grid-area: nb;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #ABCDAB;
+}
+
+.numOfWhites {
+  grid-area: nw;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #ABCDAB;
+}
+
+
+.textInput {
+  grid-area: inp;
+
+}
+
+.continue-btn {
+  grid-area: ctn;
+  background-color: #222;
+  border:2px solid #222; 
+  color:#ABCDAB;
+  font-size: 1.4rem;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 #ABCDAB, 0 6px 20px 0 #ABCDAB;
+}
+
+.continue-btn:hover {
+  grid-area: ctn;
+  background-color: #ABCDAB;
+  border:2px solid #ABCDAB;
+  color:#222;
+  font-size: 1.4rem;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 #ABCDAB, 0 6px 20px 0 #ABCDAB;
+}
+
+.main-btn {
+  grid-area: btn;
+  background-color: #222;
+  border:2px solid #222; 
+  color:#ABCDAB;
+  font-size: 1.4rem;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 #ABCDAB, 0 6px 20px 0 #ABCDAB;
+}
+
+.main-btn:hover {
+  grid-area: btn;
+  background-color: #ABCDAB;
+  border:2px solid #ABCDAB;
+  color:#222;
+  font-size: 1.4rem;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 #ABCDAB, 0 6px 20px 0 #ABCDAB;
+}
+
+
+
+
+/* gameStatusPlayerStandard */
+
+.gameStatusPlayerTurn {
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height:calc(95%/2.5);
+  width:30%;
+  padding-bottom: 2%;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-auto-rows: 1fr;
+  background-color: #131121;
+  border-radius: 35px;
+  grid-template-areas:
+    ". msg1 msg1 msg1 msg1 msg1 msg1 ."
+    ". msg2 msg2 msg2 msg2 msg2 msg2 ."
+    ". msg2 msg2 msg2 msg2 msg2 msg2 ."
+    ". b b . . w w ."
+    ". b b nb  . w w nw"
+    ". b b nb  . w w nw"
+    ". . . . . . . ."
+    ". . inp inp inp inp . ."
+    ". . guess guess guess guess . .";
+  box-shadow: 0 4px 8px 0 #ABCDAB, 0 6px 20px 0 #ABCDAB;
+
+}
+
+.gameStatusPlayerTurnSuccess {
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height:calc(95%/2.5);
+  width:30%;
+  padding-bottom: 2%;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-auto-rows: 1fr;
+  background-color: #131121;
+  border-radius: 35px;
+  grid-template-areas:
+    ". msg1 msg1 msg1 msg1 msg1 msg1 ."
+    ". msg2 msg2 msg2 msg2 msg2 msg2 ."
+    ". msg2 msg2 msg2 msg2 msg2 msg2 ."
+    ". b b . . w w ."
+    ". b b nb  . w w nw"
+    ". b b nb  . w w nw"
+    ". . . . . . . ."
+    ". . . . . . . ."
+    ". . guess guess next next . .";
+  box-shadow: 0 4px 8px 0 #ABCDAB, 0 6px 20px 0 #ABCDAB;
+
+}
+.gameStatusPlayerTurnFail {
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height:calc(95%/2.5);
+  width:30%;
+  padding-bottom: 2%;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-auto-rows: 1fr;
+  background-color: #131121;
+  border-radius: 35px;
+  grid-template-areas:
+    ". msg1 msg1 msg1 msg1 msg1 msg1 ."
+    ". msg2 msg2 msg2 msg2 msg2 msg2 ."
+    ". msg2 msg2 msg2 msg2 msg2 msg2 ."
+    ". b b . . w w ."
+    ". b b nb  . w w nw"
+    ". b b nb  . w w nw"
+    ". . . . . . . ."
+    ". . . . . . . ."
+    ". . next next next next . .";
+  box-shadow: 0 4px 8px 0 #ABCDAB, 0 6px 20px 0 #ABCDAB;
+
+}
+
+.gameStatusPlayerReguess {
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height:calc(95%/2.5);
+  width:30%;
+  padding-bottom: 2%;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-auto-rows: 1fr;
+  background-color: #131121;
+  border-radius: 35px;
+  grid-template-areas:
+    ". msg1 msg1 msg1 msg1 msg1 msg1 ."
+    ". msg2 msg2 msg2 msg2 msg2 msg2 ."
+    ". msg2 msg2 msg2 msg2 msg2 msg2 ."
+    ". b b . . w w ."
+    ". b b nb  . w w nw"
+    ". b b nb  . w w nw"
+    ". . . . . . . ."
+    ". . inp inp inp inp . ."
+    ". . guess guess guess guess . .";
+  box-shadow: 0 4px 8px 0 #ABCDAB, 0 6px 20px 0 #ABCDAB;
+}
+
+.custom-select {
+  grid-area: inp;
+  position: relative;
+  font-family: Arial;
+  background-color: #222;
+  border:2px solid #222; 
+  color:#ABCDAB;
+  font-size: 0.9rem;
+  text-align-last:center;
+  box-shadow: 0 4px 8px 0 #ABCDAB, 0 6px 20px 0 #ABCDAB;
+  cursor: pointer;
+
+}
+
+.option {
+  text-align: center;
+}
+
+.guess-btn {
+  grid-area: guess;
+  background-color: #222;
+  border:2px solid #222; 
+  color:#ABCDAB;
+  margin-top: 5%;
+  font-size: 1.4rem;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 #ABCDAB, 0 6px 20px 0 #ABCDAB;
+}
+
+.guess-btn:hover {
+  grid-area: guess;
+  background-color: #ABCDAB;
+  border:2px solid #ABCDAB;
+  color:#222;
+  font-size: 1.4rem;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 #ABCDAB, 0 6px 20px 0 #ABCDAB;
+}
+
+.next-btn {
+  grid-area: next;
+  background-color: #222;
+  border:2px solid #222; 
+  color:#ABCDAB;
+  font-size: 1.4rem;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 #ABCDAB, 0 6px 20px 0 #ABCDAB;
+}
+
+.next-btn:hover {
+  grid-area: next;
+  background-color: #ABCDAB;
+  border:2px solid #ABCDAB;
+  color:#222;
+  font-size: 1.4rem;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 #ABCDAB, 0 6px 20px 0 #ABCDAB;
+}
+
+
+/* playerDeck */
+
+.playerDeck {
+  height:calc(95%/4);
+}
+
+.playerDeckContainer {
+  height:calc(95%/4);
+  width:100vw;
+  position: absolute;
+  bottom:0;
+  /* width: 100%;
+  height: 100%; */
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+.visibleWhitePlayerCard {
+  height:66%;
+  width:7%;
+  background:#FFF;
+  opacity: 1;
+  text-align: center;
+  font-size: 3.5rem;
+  text-align:center;
+  border: 5px dashed #20c2ff;
+  margin:5px;  
+  vertical-align: middle;
+}
+.visibleBlackPlayerCard {
+  height:66%;
+  width:7%;
+  background:#000;
+  opacity: 1;
+  text-align: center;
+  font-size: 3.5rem;
+  color: white;
+  text-align:center;
+  vertical-align: middle; 
+  border: 5px  dashed #20c2ff;
+  margin:5px;
+}
+
+.drawnWhitePlayerCard {
+  height:66%;
+  width:7%;
+  background:#FFF;
+  text-align: center;
+  font-size: 3.5rem;;
+  text-align:center;
+  border: 8px  dotted deeppink;
+}
+
+.drawnBlackPlayerCard {
+  height:66%;
+  width:7%;
+  background:#000;
+  opacity: 1;
+  text-align: center;
+  font-size: 3.5rem;
+  color: white;
+  text-align:center;
+  border: 8px  dotted deeppink;
+  /* box-shadow: 0 8px 20px 0 rgba(255, 255,255, 0.5), 0 6px 20px 0 rgba(255, 255, 255, 0.5); */
+}
+
+.whitePlayerCard {
+  height:66%;
+  width:7%;
+  background:#FFF;
+  text-align: center;
+  font-size: 3.5rem;;
+  text-align:center;
+  border: 5px solid #AAA;
+}
+
+.blackPlayerCard {
+  height:66%;
+  width:7%;
+  background:#000;
+  opacity: 1;
+  text-align: center;
+  font-size: 3.5rem;
+  color: white;
+  text-align:center;
+  border: 5px  solid #AAA;
+  
+  /* box-shadow: 0 8px 20px 0 rgba(255, 255,255, 0.5), 0 6px 20px 0 rgba(255, 255, 255, 0.5); */
+}
+
+
+
+.logo {
+  text-align: center;
+  background-image: url(./LOGO.png);
+  background-size: 60% 80%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: black
+}
+
